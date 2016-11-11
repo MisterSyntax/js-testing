@@ -566,7 +566,33 @@
     </button>
   </div>
 </div>
+<script>
+//Function: creates a new paragraph and append it to the bottom of the HTML body
 
+function createParagraph(){
+	var para = document.createElement('p');
+	para.textContent = 'You clicked the button!';
+	document.body.appendChild(para);
+}
+
+/**
+ *	@Algo:  
+	1. Gets references to all of the instances of button
+	2. Loops through all the buttons and adds a click event listener to each one.
+	
+	@Description:
+	When you click any button a paragraph is added to the end of the body
+**/
+function addParagraphOnButtonClick(){
+	var buttons = document.querySelectorAll('button');
+	for(var i = 0; i < buttons.length; i++) {
+		buttons[i].addEventListener('click',createParagraph);
+	}
+}
+
+addParagraphOnButtonClick();
+
+</script>
   </body>
 </html>
 
